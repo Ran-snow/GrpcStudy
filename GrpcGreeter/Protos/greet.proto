@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+//option csharp_namespace = "GrpcGreeter";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/any.proto";
+
+package greet.v1;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  //string 
+  string message = 1;
+  //DateTime
+  google.protobuf.Timestamp start = 2;
+  //int?
+  google.protobuf.Int32Value age = 3;
+  //byte[]
+  bytes small_picture = 4;
+  //decimal 不支持,考虑使用字符串
+  //IList<T>
+  repeated string roles = 8;
+  //IDictionary<TKey, TValue>
+  map<string, string> attributes = 9;
+  google.protobuf.Any detail = 10;
+}
