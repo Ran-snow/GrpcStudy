@@ -25,6 +25,7 @@ message HelloReply {
   string message = 1;
   //DateTime
   google.protobuf.Timestamp start = 2;
+  /*
   //int?
   google.protobuf.Int32Value age = 3;
   //byte[]
@@ -35,4 +36,5 @@ message HelloReply {
   //IDictionary<TKey, TValue>
   map<string, string> attributes = 9;
   google.protobuf.Any detail = 10;
+  */
 }

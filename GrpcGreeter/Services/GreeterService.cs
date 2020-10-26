@@ -29,15 +29,15 @@ namespace GrpcGreeter
             //string
             helloReply.Message = "Hello " + request.Name;
             //google.protobuf.Timestamp
-            helloReply.Start = Timestamp.FromDateTime(DateTime.Now);
-            //google.protobuf.Int32Value
-            helloReply.Age = null;
-            //bytes
-            helloReply.SmallPicture = ByteString.CopyFrom(1);
-            //IList<T>
-            helloReply.Roles.Add("123");
-            //IDictionary<TKey, TValue>
-            helloReply.Attributes.Add("key", "value");
+            helloReply.Start = Timestamp.FromDateTime(DateTime.Now.ToUniversalTime());
+            ////google.protobuf.Int32Value
+            //helloReply.Age = null;
+            ////bytes
+            //helloReply.SmallPicture = ByteString.CopyFrom(1);
+            ////IList<T>
+            //helloReply.Roles.Add("123");
+            ////IDictionary<TKey, TValue>
+            //helloReply.Attributes.Add("key", "value");
 
             //--- 无结构的条件消息 ---
 
